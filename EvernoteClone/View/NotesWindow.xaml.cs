@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Xps;
 
 namespace EvernoteClone.View
 {
@@ -63,6 +64,8 @@ namespace EvernoteClone.View
 
             if (notesViewModel.SelectedNote != null)
             {
+                saveButton.IsEnabled = true;
+
                 if (!string.IsNullOrEmpty(notesViewModel.SelectedNote.FileLocation))
                 {
                     var fileStream = new FileStream(notesViewModel.SelectedNote.FileLocation, FileMode.Open);
@@ -70,6 +73,10 @@ namespace EvernoteClone.View
                     content.Load(fileStream, DataFormats.Rtf);
                     fileStream.Close();
                 }
+            }
+            else
+            {
+                saveButton.IsEnabled = false;
             }
         }
 
@@ -138,6 +145,8 @@ namespace EvernoteClone.View
                 contentRichTextBox.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, textDecorations);
             }
         }
+
+        //TODO: Arrumar o botão de salvar, pois o botão está ativo mesmo sem nota selecionada
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {

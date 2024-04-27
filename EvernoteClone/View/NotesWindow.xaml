@@ -154,7 +154,8 @@
 
                 <Button x:Name="saveButton"
                         Content="Salvar"
-                        Click="saveButton_Click"/>
+                        Click="saveButton_Click"
+                        IsEnabled="False"/>
 
             </ToolBar>
         </ToolBarTray>
