@@ -6,11 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace EvernoteClone.ViewModel
 {
@@ -41,6 +37,7 @@ namespace EvernoteClone.ViewModel
             {
                 selectedNotebook = value;
                 OnPropertyChanged("SelectedNotebook");
+
                 GetNotes();
             }
         }
@@ -210,5 +207,6 @@ namespace EvernoteClone.ViewModel
             DatabaseHelper.Delete(note);
             GetNotes();
         }
+
     }
 }

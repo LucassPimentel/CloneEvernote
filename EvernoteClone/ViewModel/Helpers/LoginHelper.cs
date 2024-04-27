@@ -1,18 +1,9 @@
 ﻿using EvernoteClone.Model;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Net.NetworkInformation;
-using System.Reflection.Metadata;
 using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Media;
 
 namespace EvernoteClone.ViewModel.Helpers
 {
@@ -70,6 +61,8 @@ namespace EvernoteClone.ViewModel.Helpers
 
         public static bool Login(User user)
         {
+
+
             var returnedUser = DatabaseHelper.Read<User>()
                 .Where(u => u.Name == user.Name && VerifyPassword(user.Password, u.Password, u.Salt))
                 .FirstOrDefault();

@@ -2,11 +2,7 @@
 using EvernoteClone.ViewModel.Commands;
 using EvernoteClone.ViewModel.Helpers;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace EvernoteClone.ViewModel
@@ -177,7 +173,7 @@ namespace EvernoteClone.ViewModel
             }
         }
 
-        public  void Login()
+        public void Login()
         {
             var isLoggedIn = LoginHelper.Login(User);
             if (isLoggedIn)
@@ -186,9 +182,9 @@ namespace EvernoteClone.ViewModel
             }
         }
 
-        public  void Register()
+        public void Register()
         {
-            var isRegistered =  LoginHelper.Register(User);
+            var isRegistered = LoginHelper.Register(User);
             if (isRegistered)
             {
                 Authenticated?.Invoke(this, new EventArgs());

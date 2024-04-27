@@ -1,16 +1,7 @@
-﻿using EvernoteClone.Model;
-using SQLite;
+﻿using SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net.Http;
-using System.Net.NetworkInformation;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.ObjectiveC;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using static System.Net.WebRequestMethods;
 
 namespace EvernoteClone.ViewModel.Helpers
 {
